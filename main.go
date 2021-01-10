@@ -22,7 +22,7 @@ func show_hand(hand byte) string {
 func judge(p1 *Player, p2 *Player) {
 	h1, h2 := p1.hand, p2.hand
 	fmt.Printf("%s　対　%s で　", show_hand(h2), show_hand(h1))
-	var win *Player //ポインタから、インスタンスを取り出す「操作」　// ポインタはメモリアドレス
+	var win *Player //ポインタから、インスタンスを取り出す「操作」　// ポインタはメモリアドレス //インスタンスは実体
 	if h1 == h2 {
 		fmt.Println("引き分けです。")
 		return
@@ -42,7 +42,7 @@ func game(p1 *Player, p2 *Player, n int) {
 	p1.hand = 0
 	p2.hand = 0
 
-	for p1.hand < 1 || 3 < p1.hand {
+	for p1.hand < 1 || 3 < p1.hand { //forは処理の繰り返し //どれかひとつだけでもtrueだった場合結果がtrueになる
 		fmt.Printf("%sの手を入力して下さい（1:グー, 2:チョキ, 3:パー）：", p1.name)
 		fmt.Scanf("%d", &p1.hand) //整数、基数10
 	}
@@ -77,7 +77,7 @@ func main() {
 	fmt.Scanf("%s", &man.name) //Scanは標準入力から読み込んだテキストをスキャンしてスペースで区切られた値として、順に引数に格納
 	fmt.Printf("%s　対　%s　：じゃんけん開始\n\n", cpu.name, man.name)
 
-	for i := 1; i <= 5; i++ {
+	for i := 1; i <= 10; i++ {
 		game(man, cpu, i)
 	}
 
