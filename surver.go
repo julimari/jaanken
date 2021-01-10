@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"time"
-	"https://github.com/julimari/jaanken/models" // 自分のパッケージ
+	// "https://github.com/julimari/jaanken/models" // 自分のパッケージ
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
